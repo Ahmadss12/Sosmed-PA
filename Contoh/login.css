@@ -1,0 +1,71 @@
+body {
+    background-color: #002631;
+    font-family: 'Poppins', sans-serif;
+}
+
+.bglogin {
+    position: absolute;
+    color: #fff;
+    background-color: #000;
+    margin: 30px 400px auto 376px;
+    height: 600px;
+    width: 600px;
+    border-radius: 20px;
+}
+
+.signin h1 {
+    position: absolute;
+    text-align: center;
+    padding: 10px 160px;
+    width: 300px;
+}
+
+.google {
+    position: absolute;
+    color: #fff;
+    background-color: rgb(180, 180, 180);
+    margin: 100px 160px;
+    width: 300px;
+    height: 40px;
+    border-radius: 25px;
+}
+
+.google p {
+    position: absolute;
+    margin: 6px 80px;
+    width: 300px;
+    color: #000;
+}
+
+.apple {
+    position: absolute;
+    color: #fff;
+    background-color: rgb(180, 180, 180);
+    margin: 170px 160px;
+    width: 300px;
+    height: 40px;
+    border-radius: 25px;
+}
+
+.apple p {
+    position: absolute;
+    margin: 6px 80px;
+    width: 300px;
+    color: #000;
+}
+
+hr {
+    margin-top: 230px;
+    margin-left: 160px;
+    width: 300px;
+}
+
+.or p {
+    position: absolute;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: -12px;
+    margin-left: 300px;
+    width: 300px;
+}
