@@ -1,0 +1,70 @@
+body {
+    background-color: #2B2929;
+    font-family: "Poppins";
+}
+
+.bglogin {
+    background-color: #555555;
+    width: 650px;
+    height: 450px;
+    margin-top: 70px;
+    margin-left: 368px;
+    border-radius: 8px;
+    padding: 40px;
+    padding-bottom: 70px;
+}
+
+.bglogin img {
+    width: 50px;
+    height: 50px;
+    margin-left: 300px;
+    margin-top: -20px;
+    padding-bottom: 20px;
+}
+
+.bglogin form button img {
+    width: 25px;
+    height: 25px;
+    margin-bottom: -26px;
+    margin-left: -10px;
+}
+
+.bglogin form button {
+    border: 0;
+    border-radius: 5px;
+    width: 400px;
+    height: 30px;
+    margin-left: 130px;
+    color: #555555;
+    font-size: 17px;
+}
+
+.bglogin p {
+    color: #FFFFFF;
+    font-size: 17px
+}
+
+.bglogin label {
+    color: #FFFFFF;
+    font-size: 17px;
+}
+
+.bglogin input {
+    border-radius: 5px;
+    text-decoration: none;
+    border: 0;
+    padding-bottom: 0px;
+    width: 400px;
+    height: 30px;
+    font-size: 17px;
+}
+
+.bglogin p a {
+    text-decoration: none;
+    color: #4a7bff;
+}
+
+.bglogin p a :hover {
+    text-decoration: none;
+    color: #153180;
+}
