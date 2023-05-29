@@ -11,23 +11,9 @@
 </head>
 
 <body>
-    <div id="root"></div>
+    <header id="headerContainer">
 
-    <nav class="navbar">
-        <div class="navbar-logo">
-            <img src="/src/assets/images/Manchester-United-logo.png" alt="Logo">
-            <span>Manchester United</span>
-        </div>
-        <div class="navbar-menu">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Team</a></li>
-            </ul>
-            <a class="navbar-button" href="/pages/login/login.html">Login</a>
-            <a class="navbar-button" href="/pages/register/reg.html">Sign Up</a>
-        </div>
-    </nav>
+    </header>
     <div class="hero">
         <div class="hero-content">
             <h1>Welcome</h1>
@@ -38,6 +24,20 @@
         </div>
         <img class="hero-image" src="/src/assets/images/giphy.gif" alt="Hero Image">
     </div>
+    <script>
+        // Membuat instance objek XMLHttpRequest
+        var xhttp = new XMLHttpRequest();
+
+        // Mengambil konten header.html
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("headerContainer").innerHTML = this.responseText;
+            }
+        };
+        xhttp.open("GET", "/component/header/header.html", true);
+        xhttp.send();
+    </script>
+
     <script src="/app.js"></script>
 </body>
 

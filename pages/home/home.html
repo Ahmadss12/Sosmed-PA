@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/pages/home/home.css">
+    <title>Home</title>
+    <style>
+        #headerContainer {
+            position: static;
+            top: -100px;
+            width: 100%;
+            transition: top 0.3s;
+        }
+    </style>
+</head>
+
+<body>
+    <header id="headerContainer"></header>
+    <sidebar id="SidebarComponent"></sidebar>
+    <Search id="cari"></Search>
+    <content id="content"></content>
+    <script>
+        var prevScrollPos = window.pageYOffset;
+        var headerContainer = document.getElementById("headerContainer");
+        var content = document.getElementById("content");
+
+        window.addEventListener("scroll", function () {
+            var currentScrollPos = window.pageYOffset;
+
+            if (prevScrollPos > currentScrollPos) {
+                headerContainer.style.top = "0";
+            } else {
+                headerContainer.style.top = "-100px";
+            }
+
+            prevScrollPos = currentScrollPos;
+        });
+
+
+        function loadSidebar() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("SidebarComponent").innerHTML = this.responseText;
+                }
+            };
+            xhttp.open("GET", "/component/sidebar/sidebar.html", true);
+            xhttp.send();
+        }
+        function loadcari() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("cari").innerHTML = this.responseText;
+                }
+            };
+            xhttp.open("GET", "/component/cari/cari.html", true);
+            xhttp.send();
+        }
+        function loadcontent() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("content").innerHTML = this.responseText;
+                }
+            };
+            xhttp.open("GET", "/component/post/post.html", true);
+            xhttp.send();
+        }
+
+        function loadHeader() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    var headerContent = this.responseText;
+                    var parser = new DOMParser();
+                    var headerDOM = parser.parseFromString(headerContent, "text/html");
+
+                    // Menghapus elemen dengan atribut data-ignore
+                    var ignoredElements = headerDOM.querySelectorAll("[data-ignore]");
+                    ignoredElements.forEach(function (element) {
+                        element.remove();
+                    });
+
+                    var headerContainer = document.getElementById("headerContainer");
+                    headerContainer.innerHTML = headerDOM.documentElement.innerHTML;
+                }
+            };
+            xhttp.open("GET", "/component/header/header.html", true);
+            xhttp.send();
+        }
+
+
+        loadSidebar();
+        loadHeader();
+        loadcari();
+        loadcontent();
+    </script>
+</body>
+
+</html>

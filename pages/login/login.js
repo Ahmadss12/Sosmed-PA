@@ -1,27 +1,21 @@
-window.addEventListener('DOMContentLoaded', adjustLayout);
-window.addEventListener('resize', adjustLayout);
+import { signIn } from './services/auth';
 
-function adjustLayout() {
-    var bgLogin = document.querySelector('.bglogin');
-    var loginForm = bgLogin.querySelector('form');
-    var loginButton = loginForm.querySelector('button');
+const loginForm = document.getElementById('login-form');
 
-    if (window.innerWidth < 800) {
-        bgLogin.style.width = '90%';
-        bgLogin.style.marginLeft = '5%';
-        loginForm.style.marginLeft = '0';
-        loginForm.style.width = '100%';
-        loginButton.style.width = '100%';
-        loginButton.style.marginLeft = '0';
-    } else {
-        bgLogin.style.width = '650px';
-        bgLogin.style.marginLeft = '368px';
-        loginForm.style.marginLeft = '130px';
-        loginForm.style.width = '400px';
-        loginButton.style.width = '400px';
-        loginButton.style.marginLeft = '0';
+loginForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    const username = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    try {
+        const token = await signIn(username, password);
+        // Autentikasi berhasil, lanjutkan ke halaman berikutnya
+        console.log('Login berhasil');
+        // Tambahkan kode untuk berpindah ke halaman berikutnya atau menampilkan pesan sukses
+    } catch (error) {
+        // Autentikasi gagal, tangani error
+        console.error('Login gagal', error);
+        // Tambahkan kode untuk menampilkan pesan error kepada pengguna
     }
-}
-
-// Initial layout adjustment on page load
-adjustLayout();
+});

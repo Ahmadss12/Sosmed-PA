@@ -1,27 +1,28 @@
-window.addEventListener('DOMContentLoaded', adjustLayout);
-window.addEventListener('resize', adjustLayout);
+// src/pages/Signup/Signup.js
 
-function adjustLayout() {
-    var bgLogin = document.querySelector('.bglogin');
-    var loginForm = bgLogin.querySelector('form');
-    var loginButton = loginForm.querySelector('button');
+import { signup } from '../services/auth';
 
-    if (window.innerWidth < 800) {
-        bgLogin.style.width = '90%';
-        bgLogin.style.marginLeft = '5%';
-        loginForm.style.marginLeft = '0';
-        loginForm.style.width = '100%';
-        loginButton.style.width = '100%';
-        loginButton.style.marginLeft = '0';
-    } else {
-        bgLogin.style.width = '650px';
-        bgLogin.style.marginLeft = '368px';
-        loginForm.style.marginLeft = '130px';
-        loginForm.style.width = '400px';
-        loginButton.style.width = '400px';
-        loginButton.style.marginLeft = '0';
-    }
+// Logika signup
+function handleSignup() {
+    // Ambil data input dari form signup
+    const password = document.getElementById('password').value;
+    const email = document.getElementById('email').value;
+
+    // Panggil fungsi signup dari auth.js
+    signup(username, password, email)
+        .then((response) => {
+            // Penanganan response setelah berhasil signup
+            console.log('Berhasil signup:', response);
+            // ...
+        })
+        .catch((error) => {
+            // Penanganan error saat signup
+            console.error('Gagal signup:', error);
+            // ...
+        });
 }
 
-// Initial layout adjustment on page load
-adjustLayout();
+// Export komponen signup
+export default function Signup() {
+    // ...
+}
