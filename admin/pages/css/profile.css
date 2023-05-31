@@ -3,67 +3,6 @@ body {
     color: black;
 }
 
-.sidebar {
-    position: fixed;
-    padding-top: -1000px;
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 13px;
-    line-height: 60px;
-    /* identical to box height */
-}
-
-.sidebar .bgsidebar {
-    /* background-color: #000000; */
-    margin-top: 100px;
-    padding-left: 50px;
-    margin-right: -300px;
-
-}
-
-.sidebar .bgsidebar a {
-    text-decoration: none;
-    color: #000;
-}
-
-ul li {
-    text-decoration: none;
-    color: #000;
-    display: flex;
-}
-
-ul li a p:hover {
-    color: #645e5e;
-}
-
-.sidebar .bgsidebar button {
-    width: 160px;
-    height: 40px;
-    border-radius: 6px;
-    text-decoration: none;
-    border: 0;
-    margin-top: 100px;
-    background-color: #003140;
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 20px;
-    color: #fff;
-}
-
-.sidebar .bgsidebar button:hover {
-    background-color: #355169;
-}
-
-.sidebar .bgsidebar button:active {
-    background-color: #363b3f;
-}
-
-.sidebar .bgsidebar button a {
-    color: #fff;
-}
-
 /* Content Menu */
 .content {
     width: 80%;
@@ -75,12 +14,13 @@ ul li a p:hover {
 .content .re-content {
     position: fixed;
     background-color: #fff;
-    margin-top: 70px;
+    margin-top: -10px;
     margin-left: 380px;
     padding-right: 400px;
     padding-bottom: 460px;
     color: #000;
 }
+
 
 .content .re-content h1 {
     margin-left: 100px;

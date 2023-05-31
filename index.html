@@ -4,9 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/public/icon.png" type="image/x-icon">
+    <link rel="icon" href="public/icon.png" type="image/x-icon">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
-    <link rel="stylesheet" href="/app.css">
+    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="admin/css/style.css">
     <title>Manchester United</title>
 </head>
 
@@ -14,18 +15,21 @@
     <header id="headerContainer">
 
     </header>
+    <!-- <?php
+    
+    include 'component/header/header.html'
+    ?> -->
     <div class="hero">
         <div class="hero-content">
             <h1>Welcome</h1>
             <p>Daftarlah sekarang dan ikuti kami di media sosial. Bersiaplah untuk merasakan kegembiraan berinteraksi
                 dengan komunitas
                 kami, berbagi minat, dan menjalin hubungan baru yang seru.</p><br><br>
-            <a class="hero-button" href="/pages/register/reg.html">Daftar Sekarang</a>
+            <a class="hero-button" href="pages/register/reg.html">Daftar Sekarang</a>
         </div>
-        <img class="hero-image" src="/src/assets/images/giphy.gif" alt="Hero Image">
+        <img class="hero-image" src="src/assets/images/giphy.gif" alt="Hero Image">
     </div>
     <script>
-        // Membuat instance objek XMLHttpRequest
         var xhttp = new XMLHttpRequest();
 
         // Mengambil konten header.html
@@ -34,11 +38,11 @@
                 document.getElementById("headerContainer").innerHTML = this.responseText;
             }
         };
-        xhttp.open("GET", "/component/header/header.html", true);
+        xhttp.open("GET", "admin/header.html", true);
         xhttp.send();
-    </script>
 
-    <script src="/app.js"></script>
+    </script>
+    <script src="app.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/public/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
+    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Manchester United</title>
+</head>
+
+<body>
+    <header id="header"></header>
+    <sidebar id="sidebar" class="sidebar">
+    </sidebar>
+    <section>
+        <div class="content">
+            <div class="re-content">
+                <h1>Account</h1><br><br>
+                <p id="judul">Postingan</p>
+                <hr>
+                <div class="post">
+                    <p>Ayam Lari <button id="hapus">Hapus</button> <button id="edit">Edit</button></p>
+                    <p>Ayam Lari <button id="hapus">Hapus</button> <button id="edit">Edit</button></p>
+                    <p>Ayam Lari <button id="hapus">Hapus</button> <button id="edit">Edit</button></p>
+                    <p>Ayam Lari <button id="hapus">Hapus</button> <button id="edit">Edit</button></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        var prevScrollPos = window.pageYOffset;
+        var sidebar = document.getElementById("sidebar");
+        var header = document.getElementById("header");
+
+        function loadSidebar() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    sidebar.innerHTML = this.responseText;
+                }
+            };
+            xhttp.open("GET", "../sidebar.html", true);
+            xhttp.send();
+        }
+        function loadHeader() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    var headerContent = this.responseText;
+                    var parser = new DOMParser();
+                    var headerDOM = parser.parseFromString(headerContent, "text/html");
+
+                    // Menghapus elemen dengan atribut data-ignore
+                    var ignoredElements = headerDOM.querySelectorAll("[data-ignore]");
+                    ignoredElements.forEach(function (element) {
+                        element.remove();
+                    });
+
+                    var headerContainer = document.getElementById("header");
+                    headerContainer.innerHTML = headerDOM.documentElement.innerHTML;
+
+                    // Membuat elemen <img> dan menambahkan logo beserta properti CSS
+                    var logoImg = document.createElement("img");
+                    logoImg.src = "../../src/assets/images/Manchester-United-logo.png";
+                    logoImg.alt = "Logo";
+                    logoImg.style.width = "70px";
+                    logoImg.style.height = "40px";
+                    logoImg.style.marginRight = "10px";
+                    logoImg.style.marginTop = "15px";
+                    logoImg.style.marginLeft = "40px";
+
+                    headerContainer.appendChild(logoImg);
+
+                }
+            };
+            xhttp.open("GET", "../header.html", true);
+            xhttp.send();
+        }
+
+        loadSidebar();
+        loadHeader();
+    </script>
+
+</body>
+
+</html>

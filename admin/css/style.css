@@ -1,0 +1,340 @@
+.cari {
+    position: absolute;
+    color: black;
+    background-color: #f1f1f1;
+    width: 370px;
+    z-index: 1;
+    top: 35px;
+    left: 975px;
+    border-radius: 25px;
+    text-decoration: none;
+}
+
+.cari p {
+    margin-left: 10px;
+    font-family: "Poppins";
+}
+
+.trending {
+    position: absolute;
+    color: black;
+    top: 95px;
+    left: 975px;
+    background-color: #f5f5f5;
+    width: 370px;
+    border-radius: 25px;
+}
+
+.trending h2 {
+    text-align: center;
+    font-family: "Poppins";
+}
+
+.trending p {
+    font-family: "Poppins";
+    margin-left: 10px;
+    color: hsl(0, 0%, 0%);
+    line-height: 30px;
+}
+
+.comment-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f2f2f2;
+}
+
+.comment-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.comment-list {
+    list-style: none;
+    padding: 0;
+}
+
+.comment-list li {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+
+.comment-input {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.comment-submit {
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.comment-submit:hover {
+    background-color: #45a049;
+}
+
+body {
+    background-color: #fff;
+}
+
+/* CSS untuk tampilan navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    z-index: 9999;
+}
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-logo img {
+    width: 70px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.navbar-logo span {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    color: #000;
+    /* margin-left: -10px; */
+}
+
+.navbar-menu {
+    display: flex;
+    align-items: center;
+    margin-right: 40px;
+}
+
+.navbar-menu ul {
+    list-style: none;
+    display: flex;
+
+}
+
+.navbar-button {
+    background-color: #003140;
+    color: #ffffff;
+    border: none;
+    border-radius: 7px;
+    padding: 10px 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.navbar-menu li {
+    margin-right: 20px;
+    display: flex;
+}
+
+.navbar-menu ul li a {
+    margin-right: 10px;
+    display: flex;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    color: #000;
+    text-decoration: none;
+    margin-left: 5px;
+}
+
+.navbar-menu li:last-child {
+    margin-right: 0;
+}
+
+.post-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 110px 400px auto 280px;
+    font-family: "Poppins";
+    overflow-y: auto;
+    max-height: calc(100vh - 100px);
+    scrollbar-width: thin;
+    /* Menyesuaikan lebar scrollbar */
+    scrollbar-color: transparent transparent;
+}
+
+.post-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.post-container::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.post-container::-webkit-scrollbar-thumb {
+    background-color: transparent;
+}
+
+.loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+}
+
+.loading-icon {
+    animation: spin 1s infinite linear;
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #3498db;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+/* Sesuaikan tinggi maksimum dengan tinggi viewport dikurangi tinggi header */
+
+.post {
+    background-color: #d1d1d1;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.profile-picture {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.username {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.post-content {
+    margin-bottom: 16px;
+}
+
+.post-image {
+    width: 40%;
+    max-height: 400px;
+    margin-bottom: 16px;
+    display: flex;
+}
+
+.post-footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.like-button,
+.comment-button,
+.share-button {
+    background-color: #4267B2;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+.like-button:hover,
+.comment-button:hover,
+.share-button:hover {
+    background-color: #3b5998;
+}
+
+#sidebar {
+    margin-top: 120px;
+    position: fixed;
+    text-decoration: none;
+}
+
+#sidebar a {
+    text-decoration: none;
+    color: #000;
+}
+
+#sidebar a:hover {
+    color: #3a3a3a;
+}
+
+#sidebar a:active {
+    color: #757373;
+}
+
+.sidebar {
+    position: absolute;
+    width: 75px;
+    height: 20px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 20px;
+    /* identical to box height */
+    margin-top: 10px;
+    margin-left: 60px;
+    margin-bottom: 377px;
+    margin-right: 741px;
+    line-height: 50px;
+
+    color: #000000;
+}
+
+.sidebar button {
+    width: 140px;
+    height: 40px;
+    background: #003140;
+    border-radius: 5px;
+    color: #fff;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 20px;
+}
+
+.sidebar button:hover {
+    background: #005670;
+}
+
+.sidebar button:active {
+    background: #005670;
+}

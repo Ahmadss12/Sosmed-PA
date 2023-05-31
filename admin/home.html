@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/pages/home/home.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Home</title>
     <style>
         #headerContainer {
@@ -19,35 +19,35 @@
 
 <body>
     <header id="headerContainer"></header>
-    <sidebar id="SidebarComponent"></sidebar>
+    <sidebar id="sidebar"></sidebar>
     <Search id="cari"></Search>
     <content id="content"></content>
     <script>
-        var prevScrollPos = window.pageYOffset;
+        // var prevScrollPos = window.pageYOffset;
         var headerContainer = document.getElementById("headerContainer");
         var content = document.getElementById("content");
 
-        window.addEventListener("scroll", function () {
-            var currentScrollPos = window.pageYOffset;
+        // window.addEventListener("scroll", function () {
+        //     var currentScrollPos = window.pageYOffset;
 
-            if (prevScrollPos > currentScrollPos) {
-                headerContainer.style.top = "0";
-            } else {
-                headerContainer.style.top = "-100px";
-            }
+        //     if (prevScrollPos > currentScrollPos) {
+        //         headerContainer.style.top = "0";
+        //     } else {
+        //         headerContainer.style.top = "-100px";
+        //     }
 
-            prevScrollPos = currentScrollPos;
-        });
+        //     prevScrollPos = currentScrollPos;
+        // });
 
 
         function loadSidebar() {
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
-                    document.getElementById("SidebarComponent").innerHTML = this.responseText;
+                    document.getElementById("sidebar").innerHTML = this.responseText;
                 }
             };
-            xhttp.open("GET", "/component/sidebar/sidebar.html", true);
+            xhttp.open("GET", "sidebar.html", true);
             xhttp.send();
         }
         function loadcari() {
@@ -57,7 +57,7 @@
                     document.getElementById("cari").innerHTML = this.responseText;
                 }
             };
-            xhttp.open("GET", "/component/cari/cari.html", true);
+            xhttp.open("GET", "cari.html", true);
             xhttp.send();
         }
         function loadcontent() {
@@ -67,7 +67,7 @@
                     document.getElementById("content").innerHTML = this.responseText;
                 }
             };
-            xhttp.open("GET", "/component/post/post.html", true);
+            xhttp.open("GET", "post.html", true);
             xhttp.send();
         }
 
@@ -87,12 +87,24 @@
 
                     var headerContainer = document.getElementById("headerContainer");
                     headerContainer.innerHTML = headerDOM.documentElement.innerHTML;
+
+                    // Membuat elemen <img> dan menambahkan logo beserta properti CSS
+                    var logoImg = document.createElement("img");
+                    logoImg.src = "../src/assets/images/Manchester-United-logo.png";
+                    logoImg.alt = "Logo";
+                    logoImg.style.width = "70px";
+                    logoImg.style.height = "40px";
+                    logoImg.style.marginRight = "10px";
+                    logoImg.style.marginTop = "15px";
+                    logoImg.style.marginLeft = "40px";
+
+                    headerContainer.appendChild(logoImg);
+
                 }
             };
-            xhttp.open("GET", "/component/header/header.html", true);
+            xhttp.open("GET", "header.html", true);
             xhttp.send();
         }
-
 
         loadSidebar();
         loadHeader();

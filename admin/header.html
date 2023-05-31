@@ -6,29 +6,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
-    <link rel="stylesheet" href="/component/header/header.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        span {
+            margin-left: 110px;
+        }
+    </style>
     <title>Manchester United</title>
 </head>
 
 <body>
     <nav class="navbar">
         <div class="navbar-logo">
-            <img src="/src/assets/images/Manchester-United-logo.png" alt="Logo">
+            <img src="../../src/assets/images/Manchester-United-logo.png" alt="Logo" data-ignore>
             <span>Manchester United</span>
         </div>
         <div class="navbar-menu">
             <ul>
-                <li><a href="#">Home</a></li>
+                <li><a href="../admin/home.html">Home</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Team</a></li>
             </ul>
-            <a class="navbar-button" href="/pages/login/login.html" data-ignore>Login</a>
-            <a class="navbar-button" href="/pages/register/reg.html" data-ignore>Sign Up</a>
+            <a class="navbar-button" href="../admin/pages/login.html" data-ignore>Login</a>
+            <a class="navbar-button" href="../admin/pages/reg.html" data-ignore>Sign Up</a>
 
         </div>
     </nav>
 
-    <script src="/component/header/header.js"></script>
+    <script src="js/header.js"></script>
 </body>
 
 </html>
